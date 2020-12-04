@@ -1,4 +1,8 @@
-GO=/home/wyan/.gvm/gos/go1.13/bin/go
+
+default: main
+
+clean:
+	rm driver
 
 main: main.go
 	$(GO) build
