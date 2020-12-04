@@ -1,13 +1,20 @@
 
-GO=/home/wyan/.gvm/gos/go1.13/bin/go
-all: plugins/a/a.so plugins/b/b.so main
+.PHONY: all clean
+TARGETS := plugins/a/a.plugin plugins/b/b.plugin cmd/driver/driver
 
-plugins/a/a.so:
+all: plugins/a/a.plugin plugins/b/b.plugin main
+
+clean:
+	@rm $(TARGETS)
+
+plugins/a/a.plugin:
 	$(MAKE) -C plugins/a
 
-plugins/b/b.so:
+plugins/b/b.plugin:
 	$(MAKE) -C plugins/b
 
 main:
 	$(MAKE) -C 	cmd/driver
 
+test:
+	$(warning $(FOO))

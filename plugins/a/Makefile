@@ -1,4 +1,10 @@
-GO=/home/wyan/.gvm/gos/go1.13/bin/go
 
-a.so: plugupper.go
-	$(GO) build -o a.so -buildmode=plugin plugupper.go
+.PHONY: clean
+
+default: a.plugin
+
+clean:
+	rm a.plugin
+
+a.plugin: plugupper.go
+	$(GO) build -o a.plugin -buildmode=plugin plugupper.go

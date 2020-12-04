@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"path/filepath"
+	// I don't remember why this works to find the local plug package
 	"pluggie/plug"
 	"plugin"
 )
@@ -28,8 +29,8 @@ func getPlug(plugRel string) plug.MyPlug {
 }
 
 func main() {
-	aPlug := getPlug("a/a.so")
-	bPlug := getPlug("b/b.so")
+	aPlug := getPlug("a/a.plugin")
+	bPlug := getPlug("b/b.plugin")
 
 	aPlug.Init()
 	bPlug.Init()
