@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"pluggie/plug"
 	"strings"
+
+	"github.com/shigmas/go-plugin-example/pkg/plug"
 )
 
 type (
